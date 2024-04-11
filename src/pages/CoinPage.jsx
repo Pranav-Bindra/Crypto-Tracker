@@ -62,7 +62,7 @@ export const CoinPage = () => {
         ></img>
         <div className="text-4xl font-bold mb-20">{coin?.name}</div>
       </div>
-      <div className="ml-20 grid grid-cols-12 gap-1">
+      <div className="ml-12 pb-12 grid grid-cols-6 md:ml-20 md:grid-cols-12 gap-1">
         <div className="col-span-3 pb-20">
           <div className="text-lg font-semibold">Symbol:</div>
           <div className="text-xl">{coin?.symbol}</div>
@@ -70,17 +70,23 @@ export const CoinPage = () => {
 
         <div className="col-span-3">
           <div className="text-lg font-semibold">Name:</div>
-          <div>{coin?.name}</div>
+          <div className="text-xl">{coin?.name}</div>
         </div>
 
         <div className="col-span-3">
           <div className="text-lg font-semibold">Market Cap:</div>
-          <div>{formatNumber(coin?.market_cap)}</div>
+          <div className="text-xl">
+            {symbol}
+            {formatNumber(coin?.market_cap).slice(0, -6)} M
+          </div>
         </div>
 
         <div>
           <div className="text-lg font-semibold">Market Cap:</div>
-          <div>{formatNumber(coin?.market_cap)}</div>
+          <div className="text-xl">
+            {symbol}
+            {formatNumber(coin?.market_cap).slice(0, -6)} M
+          </div>
         </div>
 
         <div className="col-span-3 pb-20">
@@ -90,6 +96,7 @@ export const CoinPage = () => {
               coin?.price >= 0 ? "text-green-500" : "text-red-500"
             }`}
           >
+            {symbol}
             {formatCurrency(coin?.price)}
           </div>
         </div>
@@ -101,7 +108,7 @@ export const CoinPage = () => {
               coin?.price_change_1h >= 0 ? "text-green-500" : "text-red-500"
             }`}
           >
-            {formatNumber(coin?.price_change_1h)}
+            {formatNumber(coin?.price_change_1h)} %
           </div>
         </div>
 
@@ -112,7 +119,7 @@ export const CoinPage = () => {
               coin?.price_change_1m >= 0 ? "text-green-500" : "text-red-500"
             }`}
           >
-            {formatNumber(coin?.price_change_1m)}
+            {formatNumber(coin?.price_change_1m)} %
           </div>
         </div>
 
@@ -123,7 +130,7 @@ export const CoinPage = () => {
               coin?.price_change_1y >= 0 ? "text-green-500" : "text-red-500"
             }`}
           >
-            {formatNumber(coin?.price_change_1y)}
+            {formatNumber(coin?.price_change_1y)} %
           </div>
         </div>
 
@@ -134,7 +141,7 @@ export const CoinPage = () => {
               coin?.price_change_7d >= 0 ? "text-green-500" : "text-red-500"
             }`}
           >
-            {formatNumber(coin?.price_change_7d)}
+            {formatNumber(coin?.price_change_7d)} %
           </div>
         </div>
 
@@ -145,18 +152,18 @@ export const CoinPage = () => {
               coin?.price_change_24h >= 0 ? "text-green-500" : "text-red-500"
             }`}
           >
-            {formatNumber(coin?.price_change_24h)}
+            {formatNumber(coin?.price_change_24h)} %
           </div>
         </div>
 
         <div className="col-span-3">
           <div className="text-lg font-semibold">Volume:</div>
-          <div>{formatNumber(coin?.volume)}</div>
+          <div className="text-xl">{formatNumber(coin?.volume)}</div>
         </div>
 
         <div className="col-span-3">
           <div className="text-lg font-semibold">Volume 7d:</div>
-          <div>{formatNumber(coin?.volume_7d)}</div>
+          <div className="text-xl">{formatNumber(coin?.volume_7d)}</div>
         </div>
       </div>
     </div>
