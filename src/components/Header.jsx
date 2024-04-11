@@ -1,6 +1,5 @@
 import { Fragment, useContext } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 import { CryptoContext, CryptoProvider } from "../CryptoContext";
 import { Link } from "react-router-dom";
@@ -66,10 +65,20 @@ export const Header = () => {
           <div>
             <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent text-yellow-500 px-3 py-2 text-sm font-semibold border-yellow-500 border shadow-sm ring-1 ring-inset hover:bg-gray-600">
               {curr}
-              <ChevronDownIcon
-                className="-mr-1 h-5 w-5 text-yellow-500"
-                aria-hidden="true"
-              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
             </Menu.Button>
           </div>
 
